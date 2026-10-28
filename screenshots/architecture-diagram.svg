@@ -1,0 +1,100 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 600" width="1000" height="600">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#090d16" />
+      <stop offset="100%" stop-color="#111827" />
+    </linearGradient>
+    <linearGradient id="cardGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#182335" />
+      <stop offset="100%" stop-color="#101826" />
+    </linearGradient>
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="0" dy="6" stdDeviation="8" flood-color="#000" flood-opacity="0.5"/>
+    </filter>
+  </defs>
+
+  <rect width="1000" height="600" fill="url(#bgGrad)" />
+
+  <!-- Grid lines -->
+  <g stroke="#1e293b" stroke-width="1" opacity="0.3">
+    <line x1="0" y1="100" x2="1000" y2="100" />
+    <line x1="0" y1="200" x2="1000" y2="200" />
+    <line x1="0" y1="300" x2="1000" y2="300" />
+    <line x1="0" y1="400" x2="1000" y2="400" />
+    <line x1="0" y1="500" x2="1000" y2="500" />
+    <line x1="200" y1="0" x2="200" y2="600" />
+    <line x1="400" y1="0" x2="400" y2="600" />
+    <line x1="600" y1="0" x2="600" y2="600" />
+    <line x1="800" y1="0" x2="800" y2="600" />
+  </g>
+
+  <!-- Title & Header -->
+  <text x="50" y="55" fill="#f8fafc" font-family="-apple-system, sans-serif" font-size="22" font-weight="bold">MALZMTPForge Pro: CCSDS 524.4-B-1 Architecture</text>
+  <text x="50" y="80" fill="#94a3b8" font-family="-apple-system, sans-serif" font-size="13">Mission Operations MAL Binding to ZMTP Transport Protocol &amp; ZeroMQ Multi-Frame Pipeline</text>
+
+  <!-- Top Layer: MO Service Layer -->
+  <g filter="url(#shadow)">
+    <rect x="50" y="110" width="900" height="75" rx="8" fill="url(#cardGrad)" stroke="#c084fc" stroke-width="1.5" />
+    <text x="70" y="140" fill="#e9d5ff" font-family="-apple-system, sans-serif" font-size="14" font-weight="bold">MISSION OPERATIONS SERVICES LAYER (CCSDS 522.0 / 522.1)</text>
+    <text x="70" y="165" fill="#cbd5e1" font-family="-apple-system, sans-serif" font-size="12">Common Services (Directory, Login, Config) • Monitor &amp; Control (Action, Parameter, Alert, Check)</text>
+  </g>
+
+  <!-- Arrows -->
+  <g stroke="#c084fc" stroke-width="2" stroke-dasharray="4,4" fill="none">
+    <line x1="500" y1="185" x2="500" y2="225" />
+  </g>
+
+  <!-- Middle Layer: Message Abstraction Layer -->
+  <g filter="url(#shadow)">
+    <rect x="50" y="225" width="900" height="90" rx="8" fill="url(#cardGrad)" stroke="#38bdf8" stroke-width="1.5" />
+    <text x="70" y="255" fill="#38bdf8" font-family="-apple-system, sans-serif" font-size="14" font-weight="bold">CCSDS 521.0-B-2 MESSAGE ABSTRACTION LAYER (MAL)</text>
+    <text x="70" y="280" fill="#94a3b8" font-family="-apple-system, sans-serif" font-size="11">Abstract Interaction Patterns &amp; End-to-End 64-Bit Transaction Correlation</text>
+    
+    <rect x="70" y="290" width="120" height="18" rx="3" fill="#0369a1" />
+    <text x="78" y="303" fill="#fff" font-family="monospace" font-size="10">SEND (1)</text>
+    <rect x="200" y="290" width="130" height="18" rx="3" fill="#0369a1" />
+    <text x="208" y="303" fill="#fff" font-family="monospace" font-size="10">SUBMIT (2)</text>
+    <rect x="340" y="290" width="140" height="18" rx="3" fill="#0369a1" />
+    <text x="348" y="303" fill="#fff" font-family="monospace" font-size="10">REQUEST (3)</text>
+    <rect x="490" y="290" width="130" height="18" rx="3" fill="#0369a1" />
+    <text x="498" y="303" fill="#fff" font-family="monospace" font-size="10">INVOKE (4)</text>
+    <rect x="630" y="290" width="150" height="18" rx="3" fill="#0369a1" />
+    <text x="638" y="303" fill="#fff" font-family="monospace" font-size="10">PROGRESS (5)</text>
+    <rect x="790" y="290" width="140" height="18" rx="3" fill="#0369a1" />
+    <text x="798" y="303" fill="#fff" font-family="monospace" font-size="10">PUBSUB (6)</text>
+  </g>
+
+  <!-- Arrows -->
+  <g stroke="#38bdf8" stroke-width="2" stroke-dasharray="4,4" fill="none">
+    <line x1="500" y1="315" x2="500" y2="355" />
+  </g>
+
+  <!-- CCSDS 524.4 MAL-ZMTP Binding Layer -->
+  <g filter="url(#shadow)">
+    <rect x="50" y="355" width="900" height="115" rx="8" fill="url(#cardGrad)" stroke="#10b981" stroke-width="1.5" />
+    <text x="70" y="385" fill="#34d399" font-family="-apple-system, sans-serif" font-size="14" font-weight="bold">CCSDS 524.4-B-1 MAL ZMTP TRANSPORT BINDING &amp; MULTI-FRAME PROTOCOL</text>
+    <text x="70" y="410" fill="#cbd5e1" font-family="-apple-system, sans-serif" font-size="12">
+      • ZMTP Frame 1: Routing Identity Envelope (Client ID) or PUB/SUB Topic Prefix (malzmtp://domain/...)
+    </text>
+    <text x="70" y="435" fill="#cbd5e1" font-family="-apple-system, sans-serif" font-size="12">
+      • ZMTP Frame 2: MAL Transport Header (Area, Service, Operation, Pattern/Stage, 64-bit TxID, Dual-URIs)
+    </text>
+    <text x="70" y="455" fill="#94a3b8" font-family="-apple-system, sans-serif" font-size="11">
+      • ZMTP Frame 3: MAL Body Payload (Zero-copy binary encapsulation with FINAL frame delimiter MORE=0)
+    </text>
+  </g>
+
+  <!-- Arrows -->
+  <g stroke="#10b981" stroke-width="2" stroke-dasharray="4,4" fill="none">
+    <line x1="500" y1="470" x2="500" y2="505" />
+  </g>
+
+  <!-- Bottom: ZeroMQ Transport Layer -->
+  <g filter="url(#shadow)">
+    <rect x="50" y="505" width="900" height="65" rx="8" fill="url(#cardGrad)" stroke="#f59e0b" stroke-width="1.5" />
+    <text x="70" y="532" fill="#fbbf24" font-family="-apple-system, sans-serif" font-size="14" font-weight="bold">ZEROMQ MESSAGE TRANSPORT PROTOCOL (ZMTP v3.0 / RFC 23 / RFC 37)</text>
+    <text x="70" y="553" fill="#cbd5e1" font-family="-apple-system, sans-serif" font-size="12">
+      ROUTER/DEALER Point-to-Point • PUB/SUB Broadcast • Brokerless Peer-to-Peer Mesh (&gt;120k msgs/sec)
+    </text>
+  </g>
+</svg>
